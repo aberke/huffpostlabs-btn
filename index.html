@@ -31,7 +31,7 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <p><img width="100px" src="/images/easy-button.png" alt="easy button" align="right"></p>
+        <p><img width="100px" src="https://lh6.ggpht.com/A-yid4qbc4wci0KS4jls8roFYv3lMkFXYlisLryRxHBzEIwmadqX3Lc6OZNocQkBXB0=w300" alt="easy button" align="right"></p>
 
 <h1>
 <a name="huffpostlabs-btn" class="anchor" href="#huffpostlabs-btn"><span class="octicon octicon-link"></span></a>huffpostlabs-btn</h1>
@@ -62,11 +62,13 @@
 <a name="step-by-step-use" class="anchor" href="#step-by-step-use"><span class="octicon octicon-link"></span></a>Step By Step Use:</h2>
 
 <ul>
-<li>complement all <code>onclick="onclickstring"</code> with the <code>data-huffpostlabs-btn</code> tag.</li>
-<li>create a <code>HuffpostLabsBtnMaster</code> to convert your buttons: <code>var myBtnMaster = new HuffpostLabsBtnMaster(context)</code> 
+<li>complement all elements that have <code>onclick="onclickstring"</code> with the <code>data-huffpostlabs-btn</code> tag.</li>
+<li>create a <code>HuffpostLabsBtnMaster</code> to convert your buttons: 
 
 <ul>
-<li>Where context is the HTML container that contains your buttons.</li>
+<li>
+<code>var myBtnMaster = new HuffpostLabsBtnMaster(context)</code> </li>
+<li>Where context is the HTML element that contains your buttons.</li>
 </ul>
 </li>
 <li>HuffpostLabsBtnMaster will find all of the elements with the <code>data-huffpostlabs-btn</code>, grab each elements onclick handler, and retrofit each element with better event handling that calls that handler.</li>
