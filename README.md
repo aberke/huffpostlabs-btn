@@ -1,12 +1,12 @@
+<img width='100px' src="/images/easy-button.png"
+ alt="easy button" align="right" />
 huffpostlabs-btn
 ================
-<img width='50px' height='50px' src="/images/easy-button.png"
- alt="easy button" align="right" />
 
 Mobile friendly buttons made easy.
 
 Why call these buttons mobile friendly?
-===
+---
 - Converts HTML elements with the ```onclick``` event handler into elements that can also handle more complex mobile events.
 - ```onclick``` event handler is also fired on the ```touchend``` event if and only if:
 	- The ```ontouchstart``` event was recently fired within 10px of the ```touchend``` event.
