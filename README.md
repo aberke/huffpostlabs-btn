@@ -1,6 +1,6 @@
 huffpostlabs-btn
 ================
-<img src="/images/easy-button.png"
+<img width='50px' height='50px' src="/images/easy-button.png"
  alt="easy button" align="right" />
 
 Mobile friendly buttons made easy.
@@ -33,7 +33,7 @@ Example Usage:
 	</div>
 	<script>
 		var container = document.getElementById('all-my-btns-container');
-		var myBtnMaster = new HuffpostLabsBtnMaster(context);
+		var myBtnMaster = new HuffpostLabsBtnMaster(container);
 	</script>
 ```
 
