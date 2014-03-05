@@ -7,6 +7,7 @@ Mobile friendly buttons made easy.
 
 Mobile Device Issues Tackled
 ---
+- On mobile devices, the ```onclick``` event is often not sensative enough
 - On mobile devices, the ```onclick``` event fires late
 - Avoid firing event handler if user touching element in order to scroll past element rather than click it
 - Allows developer to simply attach an ```onclick``` handler rather than worry about ```ontouchstart ontouchend ontouchmove```
