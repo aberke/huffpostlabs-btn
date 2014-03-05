@@ -1,4 +1,4 @@
-<img width='100px' src="/images/easy-button.png"
+<img width='100px' src="https://lh6.ggpht.com/A-yid4qbc4wci0KS4jls8roFYv3lMkFXYlisLryRxHBzEIwmadqX3Lc6OZNocQkBXB0=w300"
  alt="easy button" align="right" />
 huffpostlabs-btn
 ================
