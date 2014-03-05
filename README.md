@@ -5,10 +5,16 @@ huffpostlabs-btn
 
 Mobile friendly buttons made easy.
 
-Why call these buttons mobile friendly?
+Mobile Device Issues Tackled
+---
+- On mobile devices, the ```onclick``` event fires late
+- Avoid firing event handler if user touching element in order to scroll past element rather than click it
+- Allows developer to simply attach an ```onclick``` handler rather than worry about ```ontouchstart ontouchend ontouchmove```
+
+So what does this do?
 ---
 - Converts HTML elements with the ```onclick``` event handler into elements that can also handle more complex mobile events.
-- ```onclick``` event handler is also fired on the ```touchend``` event if and only if:
+- ```onclick``` event handler is fired on the ```touchend``` event if and only if:
 	- The ```ontouchstart``` event was recently fired within 10px of the ```touchend``` event.
 - ```onclick``` event is canceled upon the firing of the ```touchend``` event so that the target event is only handled once.
 - If a user instead drags away from the place where the initial ```touchstart``` event was fired, then the event is cancelled.
@@ -16,7 +22,7 @@ Why call these buttons mobile friendly?
 
 Step By Step Use:
 ---
-- complement all elements that have ```onclick="onclickstring"``` with the ```data-huffpostlabs-btn``` tag.
+- complement all elements that have an ```onclick``` handler with the ```data-huffpostlabs-btn``` tag.
 - create a ```HuffpostLabsBtnMaster``` to convert your buttons: 
 	- ```var myBtnMaster = new HuffpostLabsBtnMaster(context)``` 
 	- Where context is the HTML element that contains your buttons.
@@ -28,8 +34,8 @@ Example Usage:
 	<script src="http://aberke.github.io/huffpostlabs-btn/btn-master.js"></script>
 	<div id='all-my-btns-container'>
 		<p>la da daaaa</p>
-		<span data-huffpostlabs-btn onclick='f1()'>CLICK OR TOUCH TO FIRE f1</span>
-		<span data-huffpostlabs-btn onclick='f2()'>CLICK OR TOUCH TO FIRE f2</span>
+		<span data-huffpostlabs-btn onclick='f1()'>FIRE f1</span>
+		<span data-huffpostlabs-btn onclick='f2()'>FIRE f2</span>
 		<p>More HTML</p>
 	</div>
 	<script>
