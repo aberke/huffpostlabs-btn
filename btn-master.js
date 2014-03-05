@@ -1,4 +1,4 @@
-/* Code for this btn-master.js was inspired by Google Developers: https://developers.google.com/mobile/articles/fast_buttons
+/* Code for this btn-master.js was inspired by, and largely borrowed from, Google Developers: https://developers.google.com/mobile/articles/fast_buttons
 
 	Here is what it does:  looks for any item with the 'data-huffpostlabs-btn'
 

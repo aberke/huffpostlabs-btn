@@ -16,9 +16,10 @@ Why call these buttons mobile friendly?
 
 Step By Step Use:
 ---
-- complement all ```onclick="onclickstring"``` with the ```data-huffpostlabs-btn``` tag.
-- create a ```HuffpostLabsBtnMaster``` to convert your buttons: ```var myBtnMaster = new HuffpostLabsBtnMaster(context)``` 
-	- Where context is the HTML container that contains your buttons.
+- complement all elements that have ```onclick="onclickstring"``` with the ```data-huffpostlabs-btn``` tag.
+- create a ```HuffpostLabsBtnMaster``` to convert your buttons: 
+	- ```var myBtnMaster = new HuffpostLabsBtnMaster(context)``` 
+	- Where context is the HTML element that contains your buttons.
 - HuffpostLabsBtnMaster will find all of the elements with the ```data-huffpostlabs-btn```, grab each elements onclick handler, and retrofit each element with better event handling that calls that handler.
 
 Example Usage:
