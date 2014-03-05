@@ -39,12 +39,20 @@
 <p>Mobile friendly buttons made easy.</p>
 
 <h2>
-<a name="why-call-these-buttons-mobile-friendly" class="anchor" href="#why-call-these-buttons-mobile-friendly"><span class="octicon octicon-link"></span></a>Why call these buttons mobile friendly?</h2>
+<a name="mobile-device-issues-tackled" class="anchor" href="#mobile-device-issues-tackled"><span class="octicon octicon-link"></span></a>Mobile Device Issues Tackled</h2>
+
+<ul>
+<li>On mobile devices, the <code>onclick</code> event is often not sensative enough</li>
+<li>On mobile devices, the <code>onclick</code> event fires late</li>
+<li>Avoid firing event handler if user touching element in order to scroll past element rather than click it</li>
+<li>Allows developer to simply attach an <code>onclick</code> handler rather than worry about <code>ontouchstart ontouchend ontouchmove</code> or any of the problems above</li>
+</ul><h2>
+<a name="so-what-does-this-do" class="anchor" href="#so-what-does-this-do"><span class="octicon octicon-link"></span></a>So what does this do?</h2>
 
 <ul>
 <li>Converts HTML elements with the <code>onclick</code> event handler into elements that can also handle more complex mobile events.</li>
 <li>
-<code>onclick</code> event handler is also fired on the <code>touchend</code> event if and only if:
+<code>onclick</code> event handler is fired on the <code>touchend</code> event if and only if:
 
 <ul>
 <li>The <code>ontouchstart</code> event was recently fired within 10px of the <code>touchend</code> event.</li>
@@ -62,7 +70,7 @@
 <a name="step-by-step-use" class="anchor" href="#step-by-step-use"><span class="octicon octicon-link"></span></a>Step By Step Use:</h2>
 
 <ul>
-<li>complement all elements that have <code>onclick="onclickstring"</code> with the <code>data-huffpostlabs-btn</code> tag.</li>
+<li>complement all elements that have an <code>onclick</code> handler with the <code>data-huffpostlabs-btn</code> tag.</li>
 <li>create a <code>HuffpostLabsBtnMaster</code> to convert your buttons: 
 
 <ul>
@@ -78,8 +86,8 @@
 <pre><code>    &lt;script src="http://aberke.github.io/huffpostlabs-btn/btn-master.js"&gt;&lt;/script&gt;
     &lt;div id='all-my-btns-container'&gt;
         &lt;p&gt;la da daaaa&lt;/p&gt;
-        &lt;span data-huffpostlabs-btn onclick='f1()'&gt;CLICK OR TOUCH TO FIRE f1&lt;/span&gt;
-        &lt;span data-huffpostlabs-btn onclick='f2()'&gt;CLICK OR TOUCH TO FIRE f2&lt;/span&gt;
+        &lt;span data-huffpostlabs-btn onclick='f1()'&gt;FIRE f1&lt;/span&gt;
+        &lt;span data-huffpostlabs-btn onclick='f2()'&gt;FIRE f2&lt;/span&gt;
         &lt;p&gt;More HTML&lt;/p&gt;
     &lt;/div&gt;
     &lt;script&gt;
