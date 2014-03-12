@@ -1,4 +1,4 @@
-/* Code for this btn-master.js was inspired by Google Developers: https://developers.google.com/mobile/articles/fast_buttons
+/* Code for this btn-master.js was inspired by, and largely borrowed from, Google Developers: https://developers.google.com/mobile/articles/fast_buttons
 
 	Here is what it does:  looks for any item with the 'data-huffpostlabs-btn'
 
@@ -83,8 +83,8 @@ HuffpostLabsBtn.prototype.reset = function() {
 };
 
 
-
-window.HuffpostLabsClickBuster = function() {
+/* defining and instantiating it all at once */
+window.HuffpostLabsClickBuster = new function() {
 	/* code heavily borrowed from google.clickbuster 
 		
 		Reason for this object:
@@ -100,17 +100,17 @@ window.HuffpostLabsClickBuster = function() {
 	this.pop = function() {
 		this.coordinates.splice(0, 2);
 	};
-	this.onclick = function(event) {
-		for (var i = 0; i < google.clickbuster.coordinates.length; i += 2) {
-			var x = this.coordinates[i];
-			var y = this.coordinates[i + 1];
+	this.onClick = function(event) { /* when called, 'this' is the document */
+		for (var i = 0; i < HuffpostLabsClickBuster.coordinates.length; i += 2) {
+			var x = HuffpostLabsClickBuster.coordinates[i];
+			var y = HuffpostLabsClickBuster.coordinates[i + 1];
 			if (Math.abs(event.clientX - x) < 25 && Math.abs(event.clientY - y) < 25) {
 				event.stopPropagation();
 				event.preventDefault();
 			}
 		}	
 	}
-}
-document.addEventListener('click', HuffpostLabsClickBuster.onClick, true);
+}();
+document.addEventListener('click', window.HuffpostLabsClickBuster.onClick, true);
 
 
