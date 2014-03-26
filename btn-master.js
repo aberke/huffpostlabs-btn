@@ -3,6 +3,7 @@
 	Here is what it does:  looks for any item with the 'data-huffpostlabs-btn'
 
 */
+console.log(0);
 
 var HuffpostLabsBtnMaster = function(context) {
 
@@ -62,6 +63,9 @@ HuffpostLabsBtn.prototype.onTouchStart = function(event) {
 	Call stopPropagation so that event only handled once */
 	event.stopPropagation();
 
+	// add .hover class
+	this.element.className += " hover";
+
 	this.element.addEventListener('touchend', this, false);
 	document.body.addEventListener('touchmove', this, false);
 
@@ -75,6 +79,8 @@ HuffpostLabsBtn.prototype.onClick = function(event) {
 
 	if (event.type == 'touchend') {
 		HuffpostLabsClickBuster.preventGhostClick(this.startX, this.startY);
+		// remove .hover class
+		this.element.className = this.element.className.replace(/\bhover\b/, '');
 	}
 };
 HuffpostLabsBtn.prototype.reset = function() {
@@ -91,19 +97,19 @@ window.HuffpostLabsClickBuster = new function() {
 			Don't fire onclick events that have already be handled.
 			Catch onclicks that are dangerously close to touchend events that previously occured
 	*/
-	this.coordinates = [];
+	var coordinates = [];
 
 	this.preventGhostClick = function(x, y) {
-		this.coordinates.push(x, y);
+		coordinates.push(x, y);
 		window.setTimeout(this.pop, 2500);
 	};
 	this.pop = function() {
-		this.coordinates.splice(0, 2);
+		coordinates.splice(0, 2);
 	};
 	this.onClick = function(event) { /* when called, 'this' is the document */
-		for (var i = 0; i < HuffpostLabsClickBuster.coordinates.length; i += 2) {
-			var x = HuffpostLabsClickBuster.coordinates[i];
-			var y = HuffpostLabsClickBuster.coordinates[i + 1];
+		for (var i = 0; i < coordinates.length; i += 2) {
+			var x = coordinates[i];
+			var y = coordinates[i + 1];
 			if (Math.abs(event.clientX - x) < 25 && Math.abs(event.clientY - y) < 25) {
 				event.stopPropagation();
 				event.preventDefault();

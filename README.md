@@ -45,6 +45,11 @@ Example Usage:
 	</script>
 ```
 
+Fake it like it's desktop
+===
+- In your stylesheet, utilize the .hover class like you would the :hover pseudo-class
+	- .hover is added to element on touchstart event
+	- .hover is removed from element on touchend event
 
 Pull Requests:
 ===
